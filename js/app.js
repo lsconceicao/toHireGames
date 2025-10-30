@@ -60,14 +60,17 @@ function consultarEContarJogosAlugados(){
 function testePalindromo(){
     // Solicita ao usuário uma palavra para verificar se é palíndromo
     let palavra = prompt("Digite uma palavra para verificar se é um palíndromo:");
+    // Converte a palavra para minúsculas e remove caracteres especiais e espaços
+    let palavraMinuscula = palavra.toLowerCase().replace(/[^a-z0-9]/g, '');
     // Inverte a palavra digitada pelo usuário
     let palavraInvertida = palavra.split('').reverse().join('');
     // Compara a palavra original com a invertida
-    if(palavra == palavraInvertida){
+    if(palavraMinuscula == palavraInvertida){
         // Se forem iguais, exibe alerta informando que é um palíndromo
         alert(`A palavra "${palavra}" é um palíndromo!`);
     } else {
         // Se forem diferentes, exibe alerta informando que não é um palíndromo
         alert(`A palavra "${palavra}" não é um palíndromo.`);
     }
+
 }
