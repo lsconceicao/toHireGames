@@ -63,7 +63,7 @@ function testePalindromo(){
     // Converte a palavra para minúsculas e remove caracteres especiais e espaços
     let palavraMinuscula = palavra.toLowerCase().replace(/[^a-z0-9]/g, '');
     // Inverte a palavra digitada pelo usuário
-    let palavraInvertida = palavra.split('').reverse().join('');
+    let palavraInvertida = palavraMinuscula.split('').reverse().join('');
     // Compara a palavra original com a invertida
     if(palavraMinuscula == palavraInvertida){
         // Se forem iguais, exibe alerta informando que é um palíndromo
@@ -74,3 +74,4 @@ function testePalindromo(){
     }
 
 }
+
