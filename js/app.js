@@ -29,7 +29,7 @@ function alterarStatus(id){
 
     } else {
         // Confirma se o usuário deseja alugar o jogo
-        if(confirm(`Você tem certeza que deseja alugar o jogo: ${nomeJogo.textContent}?`) == true); {
+        if(confirm(`Você tem certeza que deseja alugar o jogo: ${nomeJogo.textContent}?`) == true){
         // Adiciona a indicação de alugado na imagem
         imagem.classList.add('dashboard__item__img--rented');
         // Adiciona a indicação de devolução no botão
@@ -86,5 +86,6 @@ function testePalindromo(){
     }
 
 }
+
 
 
