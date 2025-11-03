@@ -11,19 +11,25 @@ function alterarStatus(id){
     // Verifica se o jogo está alugado
     if(imagem.classList.contains('dashboard__item__img--rented')){
         // Confirma se o usuário deseja devolver o jogo
-        if (confirm(`Você tem certeza que deseja devolver o jogo: ${nomeJogo.textContent}?`)){
+        if (confirm(`Você tem certeza que deseja devolver o jogo: ${nomeJogo.textContent}?`) == true){
             // Remove a indicação de alugado na imagem
             imagem.classList.remove('dashboard__item__img--rented');
             // Remove a indicação de devolução no botão
             botao.classList.remove('dashboard__item__button--return');
             // Altera o texto do botão para 'Alugar'
             botao.textContent = 'Alugar';
+            // Exibe alerta de devolução
+            alert(`Você devolveu o jogo: ${nomeJogo.textContent}`);
+        } else {
+            // Cancela operação se o usuario clicar em cancelar
+            alert(`Operação cancelada.`);
+            // Para a função
+            return;
         }
-        // Exibe alerta de devolução
-        alert(`Você devolveu o jogo: ${nomeJogo.textContent}`);
+
     } else {
         // Confirma se o usuário deseja alugar o jogo
-        if(confirm(`Você tem certeza que deseja alugar o jogo: ${nomeJogo.textContent}?`));
+        if(confirm(`Você tem certeza que deseja alugar o jogo: ${nomeJogo.textContent}?`) == true); {
         // Adiciona a indicação de alugado na imagem
         imagem.classList.add('dashboard__item__img--rented');
         // Adiciona a indicação de devolução no botão
@@ -32,9 +38,15 @@ function alterarStatus(id){
         botao.textContent = 'Devolver'; 
         // Exibe alerta de aluguel
         alert(`Você alugou o jogo: ${nomeJogo.textContent}`);
-    }
+        } else {
+            // Cancela operação se o usuario clicar em cancelar
+            alert(`Operação cancelada.`);
+            // Para a função
+            return;
+        }
     // Atualiza a contagem de jogos alugados
     consultarEContarJogosAlugados();
+    }
 }
 
 
@@ -74,4 +86,5 @@ function testePalindromo(){
     }
 
 }
+
 
